@@ -1,6 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
+# ignore a file that is already checked in: git rm --cached FILENAME
 # dependencies
+package-lock.json
 /node_modules
 /.pnp
 .pnp.js
