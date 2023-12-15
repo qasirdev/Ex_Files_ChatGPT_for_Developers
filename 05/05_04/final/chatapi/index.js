@@ -1,8 +1,12 @@
-const express = require("express");
-const cors = require("cors");
-require("dotenv").config();
+
+import express from 'express';
+import bodyParser from 'body-parser';
+import cors from 'cors';
+import dotenv from 'dotenv';
+dotenv.config();
+import { Configuration, OpenAIApi } from "openai";
+
 const app = express();
-const { Configuration, OpenAIApi } = require("openai");
 
 // Open AI configuration
 const configuration = new Configuration({
@@ -12,7 +16,7 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 app.use(cors());
-app.use(express.json());
+app.use(bodyParser.json());
 const port = process.env.PORT || 4000;
 
 app.get("/", async (_, res) => {
